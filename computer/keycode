@@ -1,0 +1,16 @@
+term.clear()
+term.setCursorPos(1, 1)
+
+textutils.slowPrint("RocKeyManager Started.")
+textutils.slowPrint("Press a key.")
+
+function getKey()
+e, p, a = os.pullEvent()
+if e == "key" then
+print("Keycode is: " ..p)
+if e == "char" then
+print("Char is: " ..p)
+end
+end end
+
+getKey()

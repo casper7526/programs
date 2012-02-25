@@ -1,0 +1,58 @@
+--[[
+PLACE THIS INSIDE THE TURTLE'S ID FOLDER, ELSE IT WONT WORK!
+--]]
+
+rednet.open("right")
+
+term.clear()
+term.setCursorPos(1, 1)
+sp = textutils.slowPrint
+sp("Wireless Turtle Started on Turtle.")
+
+while true do
+   sender, command = rednet.receive()   
+   if command == "turtle.forward()" then
+   turtle.forward()
+   end
+   
+   if command == "turtle.back()" then
+   turtle.back()
+   end
+
+   if command == "turtle.turnLeft()" then
+   turtle.turnLeft()
+   end 
+   
+   if command == "turtle.turnRight()" then
+   turtle.turnRight()
+   end
+   
+   if command == "turtle.dig()" and turtle.detect() == true then
+   turtle.dig()
+   end
+   
+   if command == "turtle.clear()" then
+   turtle.drop(1)
+   turtle.drop(2)
+   turtle.drop(3)
+   turtle.drop(4)
+   turtle.drop(5)
+   turtle.drop(6)
+   turtle.drop(7)
+   turtle.drop(8)
+   turtle.drop(9)
+   end
+   
+   if command == "turtle.up()" then
+   turtle.up()
+   end
+   
+   if command == "turtle.down()" then
+   turtle.down()
+   end
+   
+   if command == "turtle.place()" then
+   turtle.place()
+   end
+   
+end

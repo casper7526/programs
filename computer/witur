@@ -1,0 +1,75 @@
+--[[
+PLACE THIS INSIDE THE COMPUTER'S ID FOLDER, ELSE IT WONT WORK!
+MODEM NEEDS TO BE ON THE LEFT SIDE OF THE COMPUTER.
+--]]
+
+rednet.open('left')
+
+term.clear()
+term.setCursorPos(1, 1)
+sp = textutils.slowPrint
+sp("Wireless Turtle Started.")
+sp("Commands are:")
+sp("W/Up Arrow - go forward")
+sp("S/Down Arrow - go back")
+sp("A/Left Arrow - turn left")
+sp("D/Right Arrow - turn right")
+sp("M - mine block")
+sp("Space - go up")
+sp("Left Shift - go down")
+sp("")
+
+while true do
+
+e, a = os.pullEventRaw()
+if e == "key" and a == 17 or a == 200 then
+rednet.broadcast("turtle.forward()")
+print("Forward!")
+end
+
+if e == "key" and a == 31 or a == 208 then
+rednet.broadcast("turtle.back()")
+print("Back!")
+mode = "up"
+end
+
+if e == "key" and a == 30 or a == 203 then
+rednet.broadcast("turtle.turnLeft()")
+print("Left!")
+end
+
+if e == "key" and a == 32 or a == 205 then
+rednet.broadcast("turtle.turnRight()")
+print("Right!")
+end
+
+if e == "key" and a == 50 then
+rednet.broadcast("turtle.dig()")
+print("Digging!")
+end
+
+if e == "key" and a == 49 then
+rednet.broadcast("turtle.clear()")
+print("Dropping!")
+end
+
+if e == "key" and a == 57 then
+rednet.broadcast("turtle.up()")
+print("Up!")
+end
+
+if e == "key" and a == 42 then
+rednet.broadcast("turtle.down()")
+print("Down!")
+end
+
+if e == "key" and a == 25 then
+rednet.broadcast("turtle.place()")
+print("Placing!")
+end
+
+if e == "terminate" then
+print("Too bad.")
+end
+
+end
