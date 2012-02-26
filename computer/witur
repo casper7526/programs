@@ -10,6 +10,7 @@ term.setCursorPos(1, 1)
 sp = textutils.slowPrint
 sp("Wireless Turtle Started.")
 sp("Commands are:")
+sp("")
 sp("W/Up Arrow - go forward")
 sp("S/Down Arrow - go back")
 sp("A/Left Arrow - turn left")
@@ -70,8 +71,5 @@ rednet.broadcast("turtle.place()")
 print("Placing!")
 end
 
-if e == "terminate" then
-print("Too bad.")
-end
 
 end
